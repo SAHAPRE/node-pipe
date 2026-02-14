@@ -24,14 +24,13 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh 'nvm install 16.15.1'
-                sh 'npm ci'
+                sh '/root/.nvm/versions/node/v165.1.1/bin/npm ci'
             }
         }
 
         stage('Run Unit Tests') {
             steps {
-                sh 'npm run test:unit'
+                sh '/root/.nvm/versions/node/v165.1.1/bin/npm run test:unit'
             }
         }
 
