@@ -24,25 +24,25 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh '/root/.nvm/versions/node/v165.1.1/bin/npm ci'
+                sh '/root/.nvm/versions/node/v16.15.1/bin/npm ci'
             }
         }
 
         stage('Run Unit Tests') {
             steps {
-                sh '/root/.nvm/versions/node/v165.1.1/bin/npm run test:unit'
+                sh '/root/.nvm/versions/node/v16.15.1/bin/npm run test:unit'
             }
         }
 
         stage('Run Integration Tests') {
             steps {
-                sh 'npm run test:integration'
+                sh '/root/.nvm/versions/node/v16.15.1/bin/npm run test:integration'
             }
         }
 
         stage('Generate Coverage Report') {
             steps {
-                sh 'npm run test:coverage'
+                sh '/root/.nvm/versions/node/v16.15.1/bin/npm run test:coverage'
             }
         }
 
@@ -56,7 +56,7 @@ pipeline {
 
         stage('Dependency Scan') {
             steps {
-                sh 'npm audit --audit-level=high || true'
+                sh '/root/.nvm/versions/node/v16.15.1/bin/npm audit --audit-level=high || true'
             }
         }
 
