@@ -24,6 +24,7 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
+                sh 'nvm install 16.15.1'
                 sh 'npm ci'
             }
         }
